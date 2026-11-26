@@ -1,0 +1,16 @@
+{
+  "name": "brain-arena",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "build": "npm run build -w apps/web",
+    "test": "npm run test -w apps/web && node --test apps/api/test/rules.test.mjs",
+    "typecheck": "npm run typecheck -w apps/web",
+    "db:migrate": "npm run db:migrate -w apps/api",
+    "db:seed": "npm run db:seed -w apps/api"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
